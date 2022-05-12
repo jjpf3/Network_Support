@@ -1,0 +1,56 @@
+
+ .header {
+    background-color: lightgrey;;
+    text-align: center;
+    padding: 20px;
+    font-family: Amazon Ember;
+    letter-spacing: 7px;
+    font-size: 25px;
+
+ }
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0c2331;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    font-family: "Amazon Ember";
+    font-size: 20px;
+    height: 120px;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    font-family: "Amazon Ember";
+    color: white;
+    text-align: center;
+    padding: 40px 50px;
+    text-decoration: none;
+    font-size: 30px;
+    letter-spacing: 2px;
+    
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #111;
+  }

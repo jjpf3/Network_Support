@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>DSL Network Support</title>
+  <link rel="stylesheet" href="styles/Header.css">
+  <link rel="stylesheet" href="styles/Userform.css">
+  <img src="src/images/Smile_Mark_RGB_SQUID.png" alt="Logo">
+</head>
+<body>
+  
+
+  <div class="header">
+    <h1>DSL Network Support</h1>
+  </div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="RCLP.html">RCLP</a></li>
+  </ul>
+<div>
+  <form action="/action_page.php">
+    <span class="label stationc">Station Code</span>
+    <input class="station" type="text" id="scode" name="scode" placeholder="Station Code..">
+
+    <span class="label startd">Closure Date</span>
+    <input class="dates" type="date" id="sdate" name="sdate" placeholder="Start Date..">
+
+    <span class="label endd">Re-open Date</span>
+    <input class="datesend" type="date" id="edate" name="edate" placeholder="Re-open Date..">
+  </div>
+
+  <table id="customers">
+    <tr>
+      <th>Station Code</th>
+      <th>Country</th>
+      <th>Closure Date</th>
+      <th>Re-open Date</th>
+      <th>Use Case</th>
+    </tr>
+    <tr>
+      <td>DXB1</td>
+      <td>UK</td>
+      <td>12/05/2022</td>
+      <td>15/05/2022</td>
+      <td style="background-color: chartreuse;">Station Closed</td>
+    </tr>
+  </table>
+
+
+
+</body>
+</html>

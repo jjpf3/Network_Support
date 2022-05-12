@@ -1,0 +1,94 @@
+
+.label{
+    color: black;
+    padding: 8px;
+    font-family: Arial;
+  }
+
+  .startd{
+    position: absolute;
+    top: 320px;
+    left: 680px;
+  }
+
+  .stationc{
+
+    position: absolute;
+    top: 320px;
+    left: 10px;
+
+  }
+
+  .endd{
+    position: absolute;
+    top: 320px;
+    left: 1350px;
+  }
+
+
+.station, input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Amazon Ember;
+    letter-spacing: 1px;
+    font-size: 25px;
+    position: absolute;
+    top: 300px;
+    left:120px;
+
+
+  }
+
+  .dates, input[type=date], select {
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Amazon Ember;
+    letter-spacing: 1px;
+    font-size: 25px;
+    position:relative;
+    left: 800px;
+    top: 50px;
+
+
+  }
+
+/*Table of Content*/
+
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    position: fixed;
+    top: 400px;
+
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0c2331;
+    color: white;
+  }
+
+
+  
