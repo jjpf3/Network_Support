@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+
+<!DOCTYPE>
 <html>
 
 <head>
@@ -20,6 +22,7 @@
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a class="active" href="RCLP.html">RCLP</a></li>
+    <li><a href="GACD_Config.html">GACD Config</a></li>
   </ul>
 <div>
   <form action="/action_page.php">
@@ -32,25 +35,38 @@
     <span class="label endd">Re-open Date</span>
     <input class="datesend" type="date" id="edate" name="edate" placeholder="Re-open Date..">
   </div>
+<!--<table class="table">
 
-  <table id="customers">
+    <thead></thead>
+    <tbody></tbody>
+
+  </table>
+-->
+  <table class="table">
+
     <tr>
-      <th>Station Code</th>
-      <th>Country</th>
-      <th>Closure Date</th>
-      <th>Re-open Date</th>
-      <th>Use Case</th>
+      <th>Station</th>
+      <th>Region</th>
+      <th>Closure DateTime</th>
+      <th>Re-open DateTime</th>
     </tr>
     <tr>
       <td>DXB1</td>
       <td>UK</td>
-      <td>12/05/2022</td>
-      <td>15/05/2022</td>
-      <td style="background-color: chartreuse;">Station Closed</td>
+      <td>15/05/2022 15:30</td>
+      <td>16/05/2022 10:00</td>
     </tr>
+
+    <tr>
+      <td>DNN1</td>
+      <td>UK</td>
+      <td>15/05/2022 10:00</td>
+      <td>16/05/2022 10:00</td>
+    </tr>
+
   </table>
 
-
+   <script src="scripts/Test.js"></script>
 
 </body>
 </html>
