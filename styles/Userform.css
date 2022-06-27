@@ -1,88 +1,25 @@
 
-.label{
-    color: black;
-    padding: 8px;
-    font-family: Arial;
-  }
 
-  .startd{
-    position: absolute;
-    top: 320px;
-    left: 680px;
-  }
-
-  .stationc{
-
-    position: absolute;
-    top: 320px;
-    left: 10px;
-
-  }
-
-  .endd{
-    position: absolute;
-    top: 320px;
-    left: 1350px;
-  }
-
-
-.station, input[type=text], select {
-    width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-family: Amazon Ember;
-    letter-spacing: 1px;
-    font-size: 25px;
-    position: absolute;
-    top: 290px;
-    left:120px;
-
-
-  }
-
-  .dates, input[type=date], select {
-    width: 15%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-family: Amazon Ember;
-    letter-spacing: 1px;
-    font-size: 25px;
-    position:relative;
-    left: 800px;
-    top: 40px;
-
-
-  }
-
-/*Table of Content*/
-
-  .table {
+  .tableapi {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 80%;
     position: fixed;
-    top: 400px;
+    top: 250px;
+    
 
   }
   
-  .table td, .table th {
+  .tableapi td, .tableapi th {
     border: 1px solid #ddd;
     padding: 8px;
   }
   
-  .table tr:nth-child(even){background-color: #f2f2f2;}
+  .tableapi tr:nth-child(even){background-color: #f2f2f2;}
   
-  .table tr:hover {background-color: #ddd;}
+  .tableapi tr:hover {background-color: rgb(236, 138, 53);}
   
-  .table th {
+  .tableapi th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -91,4 +28,41 @@
   }
 
 
-  
+th, td {
+  width: 1500px;
+  border: 1px solid black;
+}
+
+thead>tr {
+  position: relative;
+  display: block;
+}
+
+tbody {
+  display: block;
+  height: 600px;
+  overflow: auto;
+}
+
+
+
+tr.hide-table-padding td {
+  padding: 0;
+}
+
+.expand-button {
+	position: relative;
+}
+
+.minus .expand-button:after
+{
+  position: absolute;
+  left:.75rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  content: '-';
+}
+.accordion-toggle.collapsed .expand-button:after
+{
+  content: '+';
+}
