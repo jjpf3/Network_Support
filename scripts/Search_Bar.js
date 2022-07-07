@@ -1,23 +1,35 @@
 //Pulls the Search bar ID from HTML.
 let search = document.getElementById("cocktailSe");
+let ingArray = [];
+
+let drinks;
+let closeMod = document.getElementById("closeID");
+let modal = document.getElementById("myModal")
+let modalContent = document.getElementById("imgP");
+let ingOne = document.getElementById("ing1");
+let ingTwo = document.getElementById("ing2");
+let ingThree = document.getElementById("ing3");
+let ingFour = document.getElementById("ing4");
+let ingFive = document.getElementById("ing5");
+let ingSix = document.getElementById("ing6");
+let ingSeven = document.getElementById("ing7");
+let ingEight = document.getElementById("ing8");
+let ingNine = document.getElementById("ing9");
+let ingTen = document.getElementById("ing10");
+let ingEleven = document.getElementById("ing11");
+let ingTwelve = document.getElementById("ing12");
+let ingThirteen = document.getElementById("ing13");
+let ingFourteen = document.getElementById("ing14");
+let ingFifthteen = document.getElementById("ing15");
+let instructions = document.getElementById("instructions");
+
 //Creates a Fetch Async function to pull from the API.
-async function newScript(val) {
-
-
-
+async function newScript(val){
     let tableContent = "";
 
 
-
-    let origExp = "origExp";
-    let newExp = "newExp";
-
-    let medi = [];
-    let expMedi = [];
-
-
     //Pulls the Table body from out HTML.
-    let myTableBody = document.getElementById("tableapiBody");
+    let myTableBody = document.getElementById("drinkBody");
 
     let newSearch = val.target.value;
 
@@ -28,73 +40,69 @@ async function newScript(val) {
         return response.json();
     });
 
-    let { drinks } = newUrl;
+    drinks = newUrl.drinks.filter(drink => drink !== null);
 
-    drinks.forEach((drink, index) => {
-        let classID = origExp + index;
-        let expClassID = newExp + index;
+    drinks.forEach((value) => {
 
-        let drinkRow = document.createElement("tr");
-
-        drinkRow.addEventListener("click", event => {
-            event.preventDefault();
-            // if (newTest.style.display == "block") {
-            //     newTest.style.display = "none";
-            // } else {
-            //     newTest.style.display = "block";
-            // }
-            console.log("Drink row pressed");
-        });
-
-        drinkRow.id = drink.strDrink;
-        drinkRow.type = "button";
-
-        drinkRow.innerHTML = `<td>${drink.strDrink}</td><td>${drink.strCategory}</td>`;
-
-        let ingredientRow = `<tr id="${drink.strDrink}-${drink.strIngredient1}" type="button"><td>${drink.strMeasure1}</td>`;
-
-        // tableContent += `< tr id = "${expClassID}" style = "display:none" > `
-        // tableContent += `< td > ${drink.strIngredient1}</td > <td>${drink.strMeasure1}</td>`;
-        // tableContent += "</tr>"
-
-        // tableContent += `< tr id = "${expClassID}" style = "display:none" > `
-        // tableContent += `< td > ${drink.strIngredient2}</td > <td>${drink.strMeasure2}</td>`;
-        // tableContent += "</tr>"
-
-        tableContent += drinkRow + ingredientRow;
-
-        medi.push(classID.substring(7, 8));
-        expMedi.push(expClassID.substring(6, 7));
+        tableContent += `<tr id="${value.idDrink}" type="button" onClick="appendIngredients(${value.idDrink})">`
+        tableContent += `<td>${value.strDrink}</td><td>${value.strCategory}</td>`;
+        tableContent += "</tr>"
+    
     });
+
+    
 
 
     myTableBody.innerHTML = tableContent;
 
-
     console.log(drinks);
+    
+}
+function appendIngredients(drinkId) {
+    let drink = drinks.find(d => parseInt(d.idDrink) === drinkId);
 
 
 
-    for (let i = 0; i < 100; i++) {
+    if((ingOne.innerText = `${drink.strIngredient1}` + " | " + `${drink.strMeasure1}`) == "null | null") {ingOne.innerText = "";}
+    if((ingTwo.innerText = `${drink.strIngredient2}` + " | " + `${drink.strMeasure2}`) == "null | null") {ingTwo.innerText = "" ;}
+    if((ingThree.innerText = `${drink.strIngredient3}` + " | " + `${drink.strMeasure3}`) == "null | null") {ingThree.innerText = "" ;}
+    if((ingFour.innerText = `${drink.strIngredient4}` + " | " + `${drink.strMeasure4}`) == "null | null") {ingFour.innerText = "" ;}
+    if((ingFive.innerText = `${drink.strIngredient5}` + " | " + `${drink.strMeasure5}`) == "null | null") {ingFive.innerText = "" ;}
+    if((ingSix.innerText = `${drink.strIngredient6}` + " | " + `${drink.strMeasure6}`) == "null | null") {ingSix.innerText = "" ;}
+    if((ingSeven.innerText = `${drink.strIngredient7}` + " | " + `${drink.strMeasure7}`) == "null | null") {ingSeven.innerText = "" ;}
+    if((ingEight.innerText = `${drink.strIngredient8}` + " | " + `${drink.strMeasure8}`) == "null | null") {ingEight.innerText = "" ;}
+    if((ingNine.innerText = `${drink.strIngredient9}` + " | " + `${drink.strMeasure9}`) == "null | null") {ingNine.innerText = "" ;}
+    if((ingTen.innerText = `${drink.strIngredient10}` + " | " + `${drink.strMeasure10}`) == "null | null") {ingTen.innerText = "" ;}
+    if((ingEleven.innerText = `${drink.strIngredient11}` + " | " + `${drink.strMeasure11}`) == "null | null") {ingEleven.innerText = "" ;}
+    if((ingTwelve.innerText = `${drink.strIngredient12}` + " | " + `${drink.strMeasure12}`) == "null | null") {ingTwelve.innerText = "" ;}
+    if((ingThirteen.innerText = `${drink.strIngredient13}` + " | " + `${drink.strMeasure13}`) == "null | null") {ingThirteen.innerText = "";}
+    if((ingFourteen.innerText = `${drink.strIngredient14}` + " | " + `${drink.strMeasure14}`) == "null | null")  {ingFourteen.innerText = "";}
+    if((ingFifthteen.innerText = `${drink.strIngredient15}` + " | " + `${drink.strMeasure15}`) == "null | null") {ingFifthteen.innerText = "";}
+    if((instructions.innerText = `${drink.strInstructions}`) == "null") {ingFifthteen.innerText = "";}
 
-        let newTest = document.getElementById("newExp" + `${medi[i]} `);
+    modalContent.innerHTML += `<img src="${drink.strDrinkThumb}" class="imgClass"/>`;
 
-        let test = document.getElementById("origExp" + `${medi[i]} `);
 
-        test.addEventListener('click', event => {
-            event.preventDefault();
+    modal.style.display = "block";
 
-            if (newTest.style.display == "block") {
-                newTest.style.display = "none";
-            } else {
-                newTest.style.display = "block";
-            }
-
-            console.log(newTest);
-
-        })
-    }
 
 }
 
-search.addEventListener('change', newScript);
+
+
+function closeModal(){
+
+
+    modal.style.display = "none";
+
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+
+search.addEventListener('change',newScript);
+

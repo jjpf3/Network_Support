@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="styles/Userform.css">
+    <link rel="stylesheet" href="styles/Pop_Up.css">
+    <link src=""
 </head>
 <body style="overflow: auto">
 
@@ -11,27 +13,63 @@
 <p>Remember to open the console (Press F12) before you click "Run".</p>
 
 <p>How to display an object in the console.</p>
+  
 
 <div>
 
     <span class="csearch">Cocktail search</span>
     <input class="vehicle" type="text" id="cocktailSe" name="scode" placeholder="Cocktail..">
+</div>
+    <!-- The Modal -->
+<div id="myModal" class="modal">
 
-    <table class="tableapi">
+    <!-- Modal content -->
+    <div class="modal-content" id="modalContent">
+      <span class="close" id="closeID" onclick="closeModal()">&times;</span>
+      <H1 class="modal-header">
+        Ingredients
+      </H1>
+      <div class="modal-body">
+        <body id="modalBody">
+            <div class="textClass">
+            <p id="ing1"></p>
+            <p id="ing2"></p>
+            <p id="ing3"></p>
+            <p id="ing4"></p>
+            <p id="ing5"></p>
+            <p id="ing6"></p>
+            <p id="ing7"></p>
+            <p id="ing8"></p>
+            <p id="ing9"></p>
+            <p id="ing10"></p>
+            <p id="ing11"></p>
+            <p id="ing12"></p>
+            <p id="ing13"></p>
+            <p id="ing14"></p>
+            <p id="ing15"></p>
+            <div class="instruClass">
+                <h1>Instructions</h1>
+            <p id="instructions"></p>
+        </div>
+        </div>
+            <div id="imgP"></div>
+        </body>
+      </div>
+    </div>
+  
+  </div>
+
+    <table class="tableapi" id="random">
         <thead>
                 <th>Cocktail</th>
                 <th>Catagory</th>
         </thead>
-        <tbody id="tableapiBody" class="tbody">
-        <tbody id="tableapiBodyTwo" class="tbody"></tbody>
-            <tr>
+        <tbody id="drinkBody" class="tbody">
+            <!-- List of drinks -->
+        </tbody>
 
-                <td>Testing</td>
-                <tr class="hidetable"><td>Test2</tr></td>
-                
-            </tr>
-
-        </tbody>       
+        <tbody id="ingredientsBody">
+            <!-- List of ingredients for the selected drink -->
         </tbody>
       </table>
 </div>
