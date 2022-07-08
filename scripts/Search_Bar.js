@@ -22,6 +22,7 @@ let ingThirteen = document.getElementById("ing13");
 let ingFourteen = document.getElementById("ing14");
 let ingFifthteen = document.getElementById("ing15");
 let instructions = document.getElementById("instructions");
+let drinkClass = document.getElementById("drinkClass");
 
 //Creates a Fetch Async function to pull from the API.
 async function newScript(val){
@@ -61,8 +62,8 @@ async function newScript(val){
 function appendIngredients(drinkId) {
     let drink = drinks.find(d => parseInt(d.idDrink) === drinkId);
 
-
-
+    
+    if((drinkClass.innerText = `${drink.strDrink}`) == "null") {drinkClass.innerText = "";}
     if((ingOne.innerText = `${drink.strIngredient1}` + " | " + `${drink.strMeasure1}`) == "null | null") {ingOne.innerText = "";}
     if((ingTwo.innerText = `${drink.strIngredient2}` + " | " + `${drink.strMeasure2}`) == "null | null") {ingTwo.innerText = "" ;}
     if((ingThree.innerText = `${drink.strIngredient3}` + " | " + `${drink.strMeasure3}`) == "null | null") {ingThree.innerText = "" ;}
