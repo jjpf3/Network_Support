@@ -1,12 +1,12 @@
 //Pulls the Search bar ID from HTML.
 let search = document.getElementById("cocktailSe");
-let ingArray = [];
 
 let drinks;
+let modalBody = document.getElementById("modalBody");
 let closeMod = document.getElementById("closeID");
 let modal = document.getElementById("myModal")
 let modalContent = document.getElementById("imgP");
-let ingOne = document.getElementById("ing1");
+let ingOne = document.getElementById("ing1").innerText;
 let ingTwo = document.getElementById("ing2");
 let ingThree = document.getElementById("ing3");
 let ingFour = document.getElementById("ing4");
@@ -51,19 +51,18 @@ async function newScript(val){
     
     });
 
-    
-
 
     myTableBody.innerHTML = tableContent;
+
 
     console.log(drinks);
     
 }
+
 function appendIngredients(drinkId) {
     let drink = drinks.find(d => parseInt(d.idDrink) === drinkId);
-
-    
     if((drinkClass.innerText = `${drink.strDrink}`) == "null") {drinkClass.innerText = "";}
+
     if((ingOne.innerText = `${drink.strIngredient1}` + " | " + `${drink.strMeasure1}`) == "null | null") {ingOne.innerText = "";}
     if((ingTwo.innerText = `${drink.strIngredient2}` + " | " + `${drink.strMeasure2}`) == "null | null") {ingTwo.innerText = "" ;}
     if((ingThree.innerText = `${drink.strIngredient3}` + " | " + `${drink.strMeasure3}`) == "null | null") {ingThree.innerText = "" ;}
@@ -79,10 +78,10 @@ function appendIngredients(drinkId) {
     if((ingThirteen.innerText = `${drink.strIngredient13}` + " | " + `${drink.strMeasure13}`) == "null | null") {ingThirteen.innerText = "";}
     if((ingFourteen.innerText = `${drink.strIngredient14}` + " | " + `${drink.strMeasure14}`) == "null | null")  {ingFourteen.innerText = "";}
     if((ingFifthteen.innerText = `${drink.strIngredient15}` + " | " + `${drink.strMeasure15}`) == "null | null") {ingFifthteen.innerText = "";}
+
+
     if((instructions.innerText = `${drink.strInstructions}`) == "null") {ingFifthteen.innerText = "";}
-
     modalContent.innerHTML += `<img src="${drink.strDrinkThumb}" class="imgClass"/>`;
-
 
     modal.style.display = "block";
 

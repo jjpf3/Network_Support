@@ -43,23 +43,18 @@
 
   .instruClass {
 position: relative;
-bottom:-80px;
+bottom:-100px;
   }
 
   .modal-header {
-    padding: 2px 16px;
+    padding: 5px 16px;
+    position:relative;
+    top:-25px;
+    border-top-left-radius: 25px;
     background-color: #5cb85c;
     color: white;
   }
   
-  /* The Close Button */
-  .close {
-    color: rgb(54, 53, 53);
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-
-  }
   
   .close:hover,
   .close:focus {
@@ -77,6 +72,18 @@ bottom:-80px;
     border-radius: 25px;
 
   }
+
+    /* The Close Button */
+    .close {
+      color: rgb(54, 53, 53);
+      position:absolute;
+      top: 60px;
+      right: 30px;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+  
+    }
 
 
   /* Add Animation */
@@ -98,4 +105,13 @@ bottom:-80px;
   @keyframes fadeIn {
     from {opacity: 0} 
     to {opacity: 1}
+  }
+
+    /* The Close Button */
+  .close {
+    color: rgb(54, 53, 53);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+
   }
