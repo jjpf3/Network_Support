@@ -5,8 +5,9 @@ let drinks;
 let modalBody = document.getElementById("modalBody");
 let closeMod = document.getElementById("closeID");
 let modal = document.getElementById("myModal")
+let reviewModal = document.getElementById("reviewModalID")
 let modalContent = document.getElementById("imgP");
-let ingOne = document.getElementById("ing1").innerText;
+let ingOne = document.getElementById("ing1");
 let ingTwo = document.getElementById("ing2");
 let ingThree = document.getElementById("ing3");
 let ingFour = document.getElementById("ing4");
@@ -23,6 +24,7 @@ let ingFourteen = document.getElementById("ing14");
 let ingFifthteen = document.getElementById("ing15");
 let instructions = document.getElementById("instructions");
 let drinkClass = document.getElementById("drinkClass");
+
 
 //Creates a Fetch Async function to pull from the API.
 async function newScript(val){
@@ -45,8 +47,9 @@ async function newScript(val){
 
     drinks.forEach((value) => {
 
-        tableContent += `<tr id="${value.idDrink}" type="button" onClick="appendIngredients(${value.idDrink})">`
-        tableContent += `<td>${value.strDrink}</td><td>${value.strCategory}</td>`;
+
+        tableContent += `<tr id="${value.idDrink}"  onClick="appendIngredients(${value.idDrink})">`
+        tableContent += `<td>${value.strDrink}</td><td>${value.strCategory}</td><td>${window.localStorage.getItem(value.idDrink)}</td>`;
         tableContent += "</tr>"
     
     });
@@ -56,6 +59,10 @@ async function newScript(val){
 
 
     console.log(drinks);
+
+    let storageArray = [];
+    
+
     
 }
 
@@ -83,17 +90,31 @@ function appendIngredients(drinkId) {
     if((instructions.innerText = `${drink.strInstructions}`) == "null") {ingFifthteen.innerText = "";}
     modalContent.innerHTML += `<img src="${drink.strDrinkThumb}" class="imgClass"/>`;
 
+    
+
     modal.style.display = "block";
 
+    let butRev = document.getElementById("doneButID");
+    let butClear = document.getElementById("clearButID");
 
+    butRev.addEventListener("click", () => {
+        window.localStorage.setItem(drink.idDrink,'Done')
+    });
+
+    butClear.addEventListener("click", () => {
+        window.localStorage.removeItem(drink.idDrink,'Done')
+        alert(drink.strDrink + "Is now marked as INCOMPLETE!")
+    });
+    
+
+    
 }
-
-
 
 function closeModal(){
 
 
     modal.style.display = "none";
+    reviewModal.style.display = "none";
 
 }
 
@@ -101,7 +122,22 @@ window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
+    if (event.target == reviewModal) {
+        reviewModal.style.display = "none";
+    }
+
   }
+
+  function reviewModelOpen(){
+    modal.style.display = "none";
+    reviewModal.style.display = "block";
+
+  }
+
+function reviewColor(event){
+    let x = event.target.id;
+    return document.getElementById(x).style.color = "orange";
+}
 
 
 search.addEventListener('change',newScript);

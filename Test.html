@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="styles/Userform.css">
   <link rel="stylesheet" href="styles/Userform.css">
   <link rel="stylesheet" href="styles/Pop_Up.css">
+  <link rel="stylesheet" href="styles/Review_Pop_Up.css">
   <img class="logo" src="src/images/amazon_smile_RGB_SQUID.png" alt="Logo">
+  <!--<img class="tick" id="tickTock" src="https://flyclipart.com/thumb2/green-tick-png-green-tick-icon-image-411325.png">-->
 </head>
 <script src=></script>
 <body>
@@ -60,29 +62,57 @@
             <p id="ing13"></p>
             <p id="ing14"></p>
             <p id="ing15"></p>
-            <div class="instruClass">
-                <h2>Instructions</h2>
-            <p id="instructions"></p>
+        
         </div>
-        </div>
-            <div id="imgP"></div>
+        <div id="imgP"></div>
+        <div class="instruClass">
+          <h2>Instructions</h2>
+      <p id="instructions" class="instruText"></p>
+      </div>
+      <button class="doneBut" role="button" id="doneButID" onclick="reviewModelOpen()">Constructed</button>
+      <button class="doneBut" role="button" id="clearButID" position="relative" top="40px" right="-10px">Clear</button>
         </body>
       </div>
     </div>
   
   </div>
 
+      <!-- The Review Modal -->
+<div id="reviewModalID" class="reviewModal">
+
+  <!-- Review Modal content -->
+  <div class="review-modal-content" id="reviewModalContent">
+    <span class="close" id="closeID" onclick="closeModal()">&times;</span>
+    <H1 class="review-modal-header">
+      Review
+    </H1>
+    <div class="review-modal-body">
+      <body id="reviewModalBody">
+        <!-- Font Awesome Icon Library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <h2>Star Rating</h2>
+      <div onclick="reviewColor(event)">
+        <span class="fa fa-star" id="1star"></span>
+        <span class="fa fa-star" id="2star"></span>
+        <span class="fa fa-star" id="3star"></span>
+        <span class="fa fa-star" id="4star"></span>
+        <span class="fa fa-star" id="5star"></span>
+      </div>
+      </body>
+
+    </div>
+  </div>
+</div>
+
     <table class="tableapi" id="random">
         <thead>
                 <th>Cocktail</th>
                 <th>Catagory</th>
+                <th>Done</th>
         </thead>
         <tbody id="drinkBody" class="tbody">
             <!-- List of drinks -->
-        </tbody>
-
-        <tbody id="ingredientsBody">
-            <!-- List of ingredients for the selected drink -->
         </tbody>
       </table>
 </div>
